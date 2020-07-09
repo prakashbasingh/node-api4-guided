@@ -15,16 +15,17 @@ router.get("/shouts", (req, res, next) => {
   
   router.post("/shouts", (req, res, next) => {
 //validate data BEFORE sending it to the database
-      const shoutData = req.body;
+      const shoutData = req.body;   
+      const validation = isValid(shoutData)
 
-      if(isValid(shoutData)){
+      if(validation.successful){
         Shouts.add(req.body)
         .then(shout => {
             res.status(201).json(shout);
         })
         .catch(error => next(error));
       } else {
-          res.status(400).json({ message: "please provide a message for the shout"})
+          res.status(400).json({ message: validation.message})
       }
   });
   
