@@ -12,9 +12,9 @@ In this project we will learn how to deploy a Web API to `heroku`.
 
 Please fork this repository and follow along **using your fork** as the instructor deploys the API to `heroku`.
 
+## setup Continuous Deployment from GitHub to Heroku
 
-
--   
+-   make the port dynamic
 -   add start script
 -   create application on heroku
 -   connect to the repository on github

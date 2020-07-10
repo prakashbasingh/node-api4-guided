@@ -3,31 +3,30 @@ module.exports = {
 };
 
 function isValid(shout) {
-
     // the body should have a message property
     const validationResult = {
-        successful: true,
-        message: ""
-    }
-    if (!shout.message){
-        validationResult.message = "Please provide the message";
-        }
+        succesful: true,
+        message: "",
+    };
 
-    //the message property should be a string
-    if(shout.message && typeof shout.message !== "string") {
-        validationResult.message = "the message should be a string"
+    if (!shout.message) {
+        validationResult.message = "please provide the message";
     }
 
-    //the message property
-    if(shout.message && isString(shout.message) && shout.message.length < 3) {
-        validationResult.message = "The message should have at least 3 character long"
+    // the message property should be a string
+    if (shout.message && typeof shout.message !== "string") {
+        validationResult.message = "the message should be a string";
     }
-    
-    validationResult.successful = Boolean(validationResult.message === "")
 
+    // the message property should have at least 3 characters
+    if (shout.message && isString(shout.message) && shout.message.length < 3) {
+        validationResult.message = "the message should have at least 3 characters";
+    }
+
+    validationResult.succesful = Boolean(validationResult.message === "");
     return validationResult;
-};
+}
 
 function isString(message) {
-    return Boolean(typeof message === "string")
+    return Boolean(typeof message === "string");
 }
