@@ -5,7 +5,7 @@ module.exports = {
 function isValid(shout) {
     // the body should have a message property
     const validationResult = {
-        succesful: true,
+        successful: true,
         message: "",
     };
 
@@ -23,7 +23,8 @@ function isValid(shout) {
         validationResult.message = "the message should have at least 3 characters";
     }
 
-    validationResult.succesful = Boolean(validationResult.message === "");
+    validationResult.successful = Boolean(validationResult.message === "");
+    
     return validationResult;
 }
 
