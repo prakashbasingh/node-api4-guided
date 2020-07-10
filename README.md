@@ -20,3 +20,4 @@ Please fork this repository and follow along **using your fork** as the instruct
 -   connect to the repository on github
 -   pick a branch to deploy
 -   enable automatic deployment
+-   need to remember all these steps
